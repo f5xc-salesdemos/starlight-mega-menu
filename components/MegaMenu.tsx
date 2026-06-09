@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import type { MegaMenuConfig, MegaMenuPanel, MegaMenuCategory, MegaMenuLink as MegaMenuLinkType, MegaMenuFooter, I18nString } from '../types';
+import { langToSlug, localizeEcosystemHref } from '../libs/localize-ecosystem-href.ts';
 
 function useLocale(): string {
   const [locale, setLocale] = React.useState('en');
@@ -72,7 +73,7 @@ function CategorySection({ category, locale }: { category: MegaMenuCategory; loc
 
 function LinkItem({ item, locale }: { item: MegaMenuLinkType; locale: string }) {
   return (
-    <NavigationMenu.Link className="smm-menu-link" href={item.href}>
+    <NavigationMenu.Link className="smm-menu-link" href={localizeEcosystemHref(item.href, langToSlug(locale))}>
       {item.icon && (
         <span className="smm-link-icon" dangerouslySetInnerHTML={{ __html: item.icon }} />
       )}
@@ -89,7 +90,7 @@ function LinkItem({ item, locale }: { item: MegaMenuLinkType; locale: string }) 
 function PanelFooter({ footer, locale }: { footer: MegaMenuFooter; locale: string }) {
   return (
     <div className="smm-panel-footer">
-      <NavigationMenu.Link className="smm-footer-link" href={footer.href}>
+      <NavigationMenu.Link className="smm-footer-link" href={localizeEcosystemHref(footer.href, langToSlug(locale))}>
         <span className="smm-footer-label">{t(footer.label, footer.translations, locale)}</span>
         {footer.description && (
           <span className="smm-footer-description">{t(footer.description, footer.descriptionTranslations, locale)}</span>
@@ -135,7 +136,7 @@ export default function MegaMenu({ config }: { config: MegaMenuConfig }) {
             </NavigationMenu.Item>
           ) : (
             <NavigationMenu.Item key={item.label}>
-              <NavigationMenu.Link className="smm-link" href={item.href}>
+              <NavigationMenu.Link className="smm-link" href={localizeEcosystemHref(item.href || '', langToSlug(locale))}>
                 {t(item.label, item.translations, locale)}
               </NavigationMenu.Link>
             </NavigationMenu.Item>

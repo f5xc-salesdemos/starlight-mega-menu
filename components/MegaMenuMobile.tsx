@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { MegaMenuConfig, I18nString } from '../types';
+import { langToSlug, localizeEcosystemHref } from '../libs/localize-ecosystem-href.ts';
 
 function t(text: string, translations?: I18nString, locale?: string): string {
   if (!translations || !locale) return text;
@@ -164,7 +165,7 @@ export default function MegaMenuMobile({ config }: { config: MegaMenuConfig }) {
                               <li key={link.href}>
                                 <a
                                   className="smm-mobile-link"
-                                  href={link.href}
+                                  href={localizeEcosystemHref(link.href, langToSlug(locale))}
                                   onClick={close}
                                 >
                                   {link.icon && (
@@ -188,7 +189,7 @@ export default function MegaMenuMobile({ config }: { config: MegaMenuConfig }) {
                       {item.content.footer && (
                         <a
                           className="smm-mobile-footer-link"
-                          href={item.content.footer.href}
+                          href={localizeEcosystemHref(item.content.footer.href, langToSlug(locale))}
                           onClick={close}
                         >
                           {t(item.content.footer.label, item.content.footer.translations, locale)}
@@ -200,7 +201,7 @@ export default function MegaMenuMobile({ config }: { config: MegaMenuConfig }) {
                   <a
                     key={item.label}
                     className="smm-mobile-top-link"
-                    href={item.href}
+                    href={localizeEcosystemHref(item.href || '', langToSlug(locale))}
                     onClick={close}
                   >
                     {t(item.label, item.translations, locale)}
