@@ -1,5 +1,5 @@
 {
-  "name": "@f5xc-salesdemos/starlight-mega-menu",
+  "name": "@f5-sales-demo/starlight-mega-menu",
   "version": "0.0.0-development",
   "description": "A mega-menu navigation plugin for Astro Starlight with i18n support",
   "type": "module",
@@ -31,7 +31,7 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "@f5xc-salesdemos/i18n-core": "^1.0.0",
+    "@f5-sales-demo/i18n-core": "^1.0.0",
     "@radix-ui/react-navigation-menu": "^1.2.0"
   }
 }
