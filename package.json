@@ -1,6 +1,6 @@
 {
   "name": "@f5-sales-demo/starlight-mega-menu",
-  "version": "0.0.0-development",
+  "_scope_migrated": true, "version": "0.0.0-development",
   "description": "A mega-menu navigation plugin for Astro Starlight with i18n support",
   "type": "module",
   "license": "MIT",
