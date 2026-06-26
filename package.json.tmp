@@ -1,0 +1,37 @@
+{
+  "name": "@f5-sales-demo/starlight-mega-menu",
+  "version": "0.0.0-development",
+  "description": "A mega-menu navigation plugin for Astro Starlight with i18n support ",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.ts",
+    "./components/Header.astro": "./components/Header.astro",
+    "./components/MegaMenu.tsx": "./components/MegaMenu.tsx",
+    "./components/MegaMenuMobile.tsx": "./components/MegaMenuMobile.tsx",
+    "./components/mega-menu.css": "./components/mega-menu.css",
+    "./types": "./types.ts",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "starlight",
+    "plugin",
+    "astro",
+    "mega-menu",
+    "navigation",
+    "withastro"
+  ],
+  "peerDependencies": {
+    "@astrojs/starlight": ">=0.34.0",
+    "@astrojs/react": ">=4.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "@f5-sales-demo/i18n-core": "^1.0.0",
+    "@radix-ui/react-navigation-menu": "^1.2.0"
+  }
+}
