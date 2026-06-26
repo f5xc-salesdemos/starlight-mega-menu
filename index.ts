@@ -48,11 +48,11 @@ export default function starlightMegaMenu(config: MegaMenuConfig): StarlightPlug
         updateConfig({
           customCss: [
             ...(starlightConfig.customCss ?? []),
-            '@f5xc-salesdemos/starlight-mega-menu/components/mega-menu.css',
+            '@f5-sales-demo/starlight-mega-menu/components/mega-menu.css',
           ],
           components: {
             ...starlightConfig.components,
-            Header: '@f5xc-salesdemos/starlight-mega-menu/components/Header.astro',
+            Header: '@f5-sales-demo/starlight-mega-menu/components/Header.astro',
           },
         });
 
